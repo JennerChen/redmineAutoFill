@@ -1,0 +1,23 @@
+{
+  "name": "redmine_auto_fill_form",
+  "version": "1.0.0",
+  "description": "redmine 自动填写表单谷歌插件",
+  "main": "background.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JennerChen/redmineAutoFill.git"
+  },
+  "author": "zhang qing",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JennerChen/redmineAutoFill/issues"
+  },
+  "homepage": "https://github.com/JennerChen/redmineAutoFill#readme",
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "underscore": "^1.8.3"
+  }
+}
