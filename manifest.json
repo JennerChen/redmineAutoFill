@@ -1,20 +1,22 @@
 {
   "manifest_version": 2,
 
-  "name": "Getting started example",
-  "description": "This extension shows a Google Image search result for the current page",
+  "name": "redmine auto fill",
+  "description": "",
   "version": "1.0",
 
   "browser_action": {
-	"default_icon": "icon.png",
-	"_default_popup": "popup.html"
+  	"default_icon": "icon.png",
+  	"_default_popup": "popup.html"
   },
   "permissions": [
-	"activeTab",
-	"tabs"
+    "tabs",
+  	"activeTab",
+    "http://192.168.22.25/*",
+    "https://192.168.22.25/*"
   ],
   "background": {
-	"persistent": false,
-	"scripts": ["background.js"]
+  	"persistent": false,
+  	"scripts": ["background.js"]
   }
 }

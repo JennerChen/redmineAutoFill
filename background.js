@@ -3,20 +3,22 @@
 // found in the LICENSE file.
 
 // Called when the user clicks on the browser action.
-chrome.browserAction.onClicked.addListener(function(tab) {
-	// No tabs or host permissions needed!
-	console.log('Turning ' + tab.url + ' red!');
-	chrome.tabs.executeScript({
-		file: 'content/content.js'
-// 		code: 'document.body.style.backgroundColor="red"'
-	},function () {
-		chrome.tabs.query({active: true}, function(tabs) {
-			chrome.tabs.sendMessage(tabs[0].id, {text: "report_back"}, function(domContent) {
-				console.log(domContent);
-			});
-		});
-	});
-});
+// chrome.browserAction.onClicked.addListener(function(tab) {
+// 	chrome.tabs.executeScript({
+// 		file: 'content/content.js'
+// 	},function () {
+// 		console.log('success auto fill');
+// 	});
+// });
+
+chrome.tabs.onUpdated.addListener(function listener(tabId, changedProps,tab){
+	if (tab.status != "complete" || !tab.url ) return ;
+	if(tab.url.split('http://192.168.22.25/issues/').length === 2){
+		chrome.tabs.executeScript( tab.id ,{
+			file: 'content/content.js'
+		})
+	}
+})
 
 
 // Copyright (c) 2012 The Chromium Authors. All rights reserved.
